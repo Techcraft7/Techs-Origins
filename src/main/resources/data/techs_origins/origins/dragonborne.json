@@ -1,0 +1,11 @@
+{
+	"powers": [
+		"\$modid:launch_dragon_fireball",
+		"\$modid:crystal_regen",
+		"\$modid:no_dragon_breath",
+		"\$modid:no_dragon_fireball_aoe_cloud"
+	],
+	"icon": "dragon_egg",
+	"order": 1,
+	"impact": 2
+}

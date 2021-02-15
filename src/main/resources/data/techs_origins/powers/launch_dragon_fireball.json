@@ -1,0 +1,10 @@
+{
+	"type": "origins:fire_projectile",
+	"cooldown": 30,
+	"entity_type": "minecraft:dragon_fireball",
+	"sound": "\$modid:fireball",
+	"hud_render": {
+		"sprite_location": "\$modid:textures/gui/bars.png",
+		"bar_index": 0
+	}
+}

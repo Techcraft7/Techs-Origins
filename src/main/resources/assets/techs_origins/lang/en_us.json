@@ -1,0 +1,6 @@
+{
+	"origin.\${modid}.dragonborne.name": "Dragonborne",
+	"origin.\${modid}.dragonborne.description": "You are a child of the Ender Dragon",
+	"power.\${modid}.crystal_regen.name": "Crystal Regen",
+	"power.\${modid}.crystal_regen.description": "End Crystals give you Regeneration, this stacks up to Regeneration 3"
+}

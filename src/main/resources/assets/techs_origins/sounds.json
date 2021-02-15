@@ -1,0 +1,8 @@
+{
+	"fireball": {
+		"sounds": [
+			"\$modid:shoot"
+		],
+		"pitch": 1.0
+	}
+}

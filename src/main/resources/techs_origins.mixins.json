@@ -1,0 +1,20 @@
+{
+	"required": true,
+	"minVersion": "0.8",
+	"package": "io.github.techcraft7.techs_origins.mixin",
+	"compatibilityLevel": "JAVA_8",
+	"mixins": [
+		"DragonFireballsStopInMidAirFixMixin",
+		"PlayerEndCrystalRegenMixin",
+		"PlayerMutationStateUpdater"
+	],
+	"client": [
+		"ConnectScreenMixin",
+		"GetSkinTextureMixin",
+		"MinecraftClientMixin",
+		"PlayerEndCrystalBeamRendererMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
