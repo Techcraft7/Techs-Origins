@@ -19,7 +19,10 @@ public class GetSkinTextureMixin {
 		PlayerMutationData mutationData = MutationDataClient.getState(player);
 		boolean slim = player.getModel().equalsIgnoreCase("slim");
 		if (mutationData != null) {
-			cir.setReturnValue(mutationData.getTexture(slim));
+			Identifier texture = mutationData.getTexture(player);
+			if (texture != null) {
+				cir.setReturnValue(texture);
+			}
 		}
 	}
 

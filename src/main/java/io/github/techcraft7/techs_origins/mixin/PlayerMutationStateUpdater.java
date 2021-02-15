@@ -1,5 +1,7 @@
 package io.github.techcraft7.techs_origins.mixin;
 
+import io.github.techcraft7.techs_origins.core.MutationDataServer;
+import io.github.techcraft7.techs_origins.core.MutationState;
 import io.github.techcraft7.techs_origins.init.TOPowers;
 import net.minecraft.entity.player.PlayerEntity;
 import org.spongepowered.asm.mixin.Mixin;
@@ -20,6 +22,11 @@ public class PlayerMutationStateUpdater {
 		if (player.getEntityWorld().isClient) {
 			return;
 		}
-		// TODO: check player age, if it is divisible by some large number (and not zero), then increment the state
+		// Don't check every tick to prevent lag
+		if (player.age % 20 != 0) {
+			return;
+		}
+		MutationState state = MutationState.getStateFromAgeTicks(player.age);
+		MutationDataServer.updateState(player.getUuid(), state);
 	}
 }
