@@ -31,22 +31,24 @@ public class MutationDataClient {
 	public static void resetPlayerData() {
 		PLAYER_DATA.clear();
 		try {
-			TEXTURE_CACHE.forEach((key, value) -> {
-				TechsOrigins.LOGGER.debug("Destroying texture: " + value.getID());
-				MinecraftClient.getInstance().getTextureManager().destroyTexture(value.getID());
-				try {
-					textures.setAccessible(true);
-					//noinspection unchecked
-					((Map<Identifier, AbstractTexture>)textures.get(MinecraftClient.getInstance()
-						.getTextureManager())).remove(value.getID());
-				} catch (IllegalAccessException e) {
-					e.printStackTrace();
-				}
-			});
+			TEXTURE_CACHE.forEach((key, value) -> destroyTexture(value));
 		} catch (Throwable t) {
 			TechsOrigins.LOGGER.debug("Error resetting TextureManager textures!", t);
 		}
 		TEXTURE_CACHE.clear();
+	}
+
+	private static void destroyTexture(MutationTexture value) {
+		TechsOrigins.LOGGER.debug("Destroying texture: " + value.getID());
+		MinecraftClient.getInstance().getTextureManager().destroyTexture(value.getID());
+		try {
+			textures.setAccessible(true);
+			//noinspection unchecked
+			((Map<Identifier, AbstractTexture>)textures.get(MinecraftClient.getInstance()
+				.getTextureManager())).remove(value.getID());
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public static PlayerMutationData getPlayerData(UUID uuid) {
@@ -78,8 +80,22 @@ public class MutationDataClient {
 		return TEXTURE_CACHE.put(uuid, new MutationTexture(uuid));
 	}
 
-	public static void updateMultipleStates(Map<UUID, PlayerMutationData> data) {
-		Objects.requireNonNull(data);
-		data.forEach(PLAYER_DATA::put);
+	public static void updateMultipleStates(Map<UUID, PlayerMutationData> map) {
+		Objects.requireNonNull(map);
+		map.forEach((uuid, data) -> {
+			if (getPlayerData(uuid) != null) {
+				// If mutation state updated, then the texture is now invalid
+				if (getPlayerData(uuid).getB() != data.getB()) {
+					if (TEXTURE_CACHE.containsKey(uuid)) {
+						try {
+							destroyTexture(TEXTURE_CACHE.remove(uuid));
+						} catch (Throwable t) {
+							t.printStackTrace();
+						}
+					}
+				}
+			}
+			PLAYER_DATA.put(uuid, data);
+		});
 	}
 }

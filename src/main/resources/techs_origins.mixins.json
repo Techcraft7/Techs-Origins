@@ -4,6 +4,7 @@
   "package": "io.github.techcraft7.techs_origins.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "CommandRegistererMixin",
     "DragonFireballsStopInMidAirFixMixin",
     "MinecraftServerMixin",
     "NoDragonBreathAOECloudMixin",
