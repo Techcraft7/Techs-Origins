@@ -1,7 +1,7 @@
 {
 	"fireball": {
 		"sounds": [
-			"\$modid:shoot"
+			"techs_origins:shoot"
 		],
 		"pitch": 1.0
 	}

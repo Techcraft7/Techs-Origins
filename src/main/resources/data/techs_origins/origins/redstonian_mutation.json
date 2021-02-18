@@ -1,0 +1,8 @@
+{
+  "powers": [
+    "\$modid:mutation_redstonian"
+  ],
+  "icon": "redstone_block",
+  "order": 98,
+  "impact": 3
+}

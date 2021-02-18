@@ -1,7 +1,7 @@
 package io.github.techcraft7.techs_origins.mixin;
 
 import io.github.techcraft7.techs_origins.TechsOrigins;
-import io.github.techcraft7.techs_origins.core.MutationDataClient;
+import io.github.techcraft7.techs_origins.client.MutationDataClient;
 import net.minecraft.client.gui.screen.ConnectScreen;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

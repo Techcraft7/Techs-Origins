@@ -1,6 +1,6 @@
 package io.github.techcraft7.techs_origins.mixin;
 
-import io.github.techcraft7.techs_origins.core.MutationDataClient;
+import io.github.techcraft7.techs_origins.client.MutationDataClient;
 import io.github.techcraft7.techs_origins.core.PlayerMutationData;
 import net.minecraft.client.texture.AbstractTexture;
 import net.minecraft.client.texture.TextureManager;

@@ -1,12 +1,12 @@
 {
 	"powers": [
+		"\$modid:mutation_dragon",
 		"\$modid:launch_dragon_fireball",
 		"\$modid:crystal_regen",
-		"\$modid:mutation_dragon",
 		"\$modid:no_dragon_breath",
 		"\$modid:no_dragon_fireball_aoe_cloud"
 	],
 	"icon": "dragon_egg",
-	"order": 1,
-	"impact": 2
+	"order": 999,
+	"impact": 3
 }

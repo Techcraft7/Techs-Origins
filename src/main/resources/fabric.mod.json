@@ -1,15 +1,15 @@
 {
 	"schemaVersion": 1,
-	"id": "\$modid",
+	"id": "techs_origins",
 	"version": "${version}",
 	"name": "Tech's Origins",
-	"description": "",
+	"description": "An origins addon!",
 	"authors": [
 		"Techcraft7"
 	],
 	"contact": {
-		"homepage": "",
-		"sources": ""
+		"homepage": "https://github.com/Techcraft7/Techs-Origins/issues",
+		"sources": "https://github.com/Techcraft7/Techs-Origins"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/techs_origins/icon.png",
@@ -17,6 +17,12 @@
 	"entrypoints": {
 		"main": [
 			"io.github.techcraft7.techs_origins.TechsOrigins"
+		],
+		"client": [
+			"io.github.techcraft7.techs_origins.TechsOriginsClient"
+		],
+		"server": [
+			"io.github.techcraft7.techs_origins.TechsOriginsServer"
 		]
 	},
 	"mixins": [
@@ -29,6 +35,5 @@
 		"origins": ">=0.4.6"
 	},
 	"suggests": {
-		"another-mod": "*"
 	}
 }

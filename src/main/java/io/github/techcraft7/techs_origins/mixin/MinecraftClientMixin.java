@@ -1,7 +1,7 @@
 package io.github.techcraft7.techs_origins.mixin;
 
 import io.github.techcraft7.techs_origins.TechsOrigins;
-import io.github.techcraft7.techs_origins.core.MutationDataClient;
+import io.github.techcraft7.techs_origins.client.MutationDataClient;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.util.registry.DynamicRegistryManager;
 import net.minecraft.world.gen.GeneratorOptions;

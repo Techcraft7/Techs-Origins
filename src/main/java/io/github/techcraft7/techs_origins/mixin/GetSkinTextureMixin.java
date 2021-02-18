@@ -1,6 +1,6 @@
 package io.github.techcraft7.techs_origins.mixin;
 
-import io.github.techcraft7.techs_origins.core.MutationDataClient;
+import io.github.techcraft7.techs_origins.client.MutationDataClient;
 import io.github.techcraft7.techs_origins.core.PlayerMutationData;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.render.entity.PlayerEntityRenderer;
@@ -16,7 +16,7 @@ public class GetSkinTextureMixin {
 	@Inject(at = @At("HEAD"), method = "getTexture", cancellable = true)
 	public void getTexture(AbstractClientPlayerEntity player, CallbackInfoReturnable<Identifier> cir) {
 		PlayerEntityRenderer renderer = (PlayerEntityRenderer)(Object)this;
-		PlayerMutationData mutationData = MutationDataClient.getState(player);
+		PlayerMutationData mutationData = MutationDataClient.getPlayerData(player);
 		boolean slim = player.getModel().equalsIgnoreCase("slim");
 		if (mutationData != null) {
 			Identifier texture = mutationData.getTexture(player);

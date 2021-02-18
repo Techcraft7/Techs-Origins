@@ -1,14 +1,13 @@
 package io.github.techcraft7.techs_origins.core;
 
 import io.github.techcraft7.techs_origins.TechsOrigins;
+import io.github.techcraft7.techs_origins.client.MutationDataClient;
 import io.github.techcraft7.techs_origins.util.Tuple;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.util.Identifier;
-import org.jetbrains.annotations.Contract;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.*;
 
 import java.util.*;
 
@@ -24,25 +23,21 @@ public class PlayerMutationData extends Tuple<MutationType, MutationState> {
 
 	@Environment(EnvType.CLIENT)
 	public static Identifier createPartialID(UUID uuid) {
-		PlayerMutationData state = MutationDataClient.getState(uuid);
-		switch (state.getB()) {
+		PlayerMutationData data = MutationDataClient.getPlayerData(uuid);
+		switch (data.getB()) {
 			case NONE:
 				return null;
 			case PARTIAL_1:
 			case PARTIAL_2:
 			case PARTIAL_3:
 			case PARTIAL_4:
-				return TechsOrigins.identifier(String.format(
-					"%s/%s/%s.png",
+				return TechsOrigins.identifier(String.format("%s/%s/%s.png",
 					PARTIAL_MUTATION_PREFIX,
 					uuid,
-					state.getB()
-						.name()
-						.toLowerCase()
+					data.getB().name().toLowerCase()
 				));
 			case FULL:
-				return state.getA()
-					.getSkin(state.slim);
+				return data.getA().getSkin(data.slim);
 		}
 		return null; // Should not happen!
 	}
@@ -53,8 +48,7 @@ public class PlayerMutationData extends Tuple<MutationType, MutationState> {
 		if (id == null) {
 			return null;
 		}
-		if (id.getNamespace()
-			.contentEquals(TechsOrigins.MOD_ID)) {
+		if (id.getNamespace().contentEquals(TechsOrigins.MOD_ID)) {
 			String path = id.getPath();
 			// check for mutation/ at start of path
 			if (!path.startsWith(PlayerMutationData.PARTIAL_MUTATION_PREFIX + "/")) {
@@ -77,8 +71,13 @@ public class PlayerMutationData extends Tuple<MutationType, MutationState> {
 		return null;
 	}
 
+	public static Identifier createPartial(UUID uuid, MutationState state) {
+		return TechsOrigins.identifier(PARTIAL_MUTATION_PREFIX + "/" + uuid + "/" + state.name()
+			.toLowerCase() + ".png");
+	}
+
 	/**
-	 * @param player
+	 * @param player Player to get texture of
 	 * @return The specified texture for the mutation state
 	 *
 	 * <h1>Partial Textures</h1>
@@ -97,5 +96,13 @@ public class PlayerMutationData extends Tuple<MutationType, MutationState> {
 
 	public boolean isSlim() {
 		return slim;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (super.equals(o)) {
+			return ((PlayerMutationData)o).isSlim() && this.isSlim();
+		}
+		return false;
 	}
 }

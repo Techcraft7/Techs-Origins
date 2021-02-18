@@ -1,6 +1,11 @@
 {
 	"replace": false,
 	"origins": [
-		"\$modid:dragonborne"
+		"\$modid:dragonborne",
+		"\$modid:dragonborne_mutation",
+		"\$modid:zombie",
+		"\$modid:zombie_mutation",
+		"\$modid:redstonian",
+		"\$modid:redstonian_mutation"
 	]
 }

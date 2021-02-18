@@ -84,7 +84,7 @@ tasks.withType(JavaCompile).configureEach {
 	def targetVersion = 8
 	if (JavaVersion.current().isJava9Compatible()) {
 		//noinspection GroovyAccessibility
-		it.options.release = targetVersion as Property<Integer>
+		it.options.release = targetVersion
 	}
 }
 

@@ -1,22 +1,24 @@
 {
-	"required": true,
-	"minVersion": "0.8",
-	"package": "io.github.techcraft7.techs_origins.mixin",
-	"compatibilityLevel": "JAVA_8",
-	"mixins": [
-		"DragonFireballsStopInMidAirFixMixin",
-		"PlayerEndCrystalRegenMixin",
-		"PlayerMutationStateUpdater",
-		"TextureManagerMixin"
-	],
-	"client": [
-		"BindTextureInnerMixin",
-		"ConnectScreenMixin",
-		"GetSkinTextureMixin",
-		"MinecraftClientMixin",
-		"PlayerEndCrystalBeamRendererMixin"
-	],
-	"injectors": {
-		"defaultRequire": 1
+  "required": true,
+  "minVersion": "0.8",
+  "package": "io.github.techcraft7.techs_origins.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "DragonFireballsStopInMidAirFixMixin",
+    "MinecraftServerMixin",
+    "NoDragonBreathAOECloudMixin",
+    "PlayerEndCrystalRegenMixin",
+    "PlayerMutationTypeUpdater",
+    "TextureManagerMixin"
+  ],
+  "client": [
+    "BindTextureInnerMixin",
+    "ConnectScreenMixin",
+    "GetSkinTextureMixin",
+    "MinecraftClientMixin",
+    "PlayerEndCrystalBeamRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
 	}
 }
