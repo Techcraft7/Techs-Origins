@@ -1,8 +1,7 @@
 package io.github.techcraft7.techs_origins.init;
 
 import com.google.common.collect.Maps;
-import io.github.apace100.origins.power.Power;
-import io.github.apace100.origins.power.PowerTypeReference;
+import io.github.apace100.origins.power.*;
 import io.github.apace100.origins.power.factory.PowerFactory;
 import io.github.apace100.origins.registry.ModRegistries;
 import io.github.apace100.origins.util.*;
@@ -29,8 +28,8 @@ public class TOPowers {
 		"mutation_zombie"));
 	public static final PowerTypeReference<?> MUTATION_REDSTONIAN = new PowerTypeReference<>(TechsOrigins.identifier(
 		"mutation_redstonian"));
-	public static final PowerTypeReference<?> REDSTONE_TOUCH =
-		new PowerTypeReference<>(TechsOrigins.identifier("redstone_touch"));
+	public static final PowerTypeReference<?> REDSTONE_AURA =
+		new PowerTypeReference<>(TechsOrigins.identifier("redstone_aura"));
 	private static final Map<MutationType, PowerTypeReference<?>> MUTATION_MAP = Maps.newHashMap();
 	private static final Map<PowerFactory<?>, Identifier> POWER_FACTORIES = new LinkedHashMap<>();
 
@@ -57,16 +56,16 @@ public class TOPowers {
 				data.getString("stun_type")
 			)
 		));
-		POWER_FACTORIES.keySet().forEach(powerType -> {
-			TechsOrigins.LOGGER.info("Registering power type: " + powerType);
-			Registry.register(ModRegistries.POWER_FACTORY, POWER_FACTORIES.get(powerType), powerType);
+		POWER_FACTORIES.forEach((factory, id) -> {
+			TechsOrigins.LOGGER.info("Registering power factory: " + id);
+			Registry.register(ModRegistries.POWER_FACTORY, id, factory);
 		});
 	}
 
 	public static boolean isMutated(PlayerEntity player) {
 		return Arrays.stream(MUTATION_MAP.values().toArray())
 			.map(o -> (PowerTypeReference<?>)o)
-			.noneMatch(ptr -> ptr.isActive(player));
+			.anyMatch(ptr -> ptr.isActive(player));
 	}
 
 	/**

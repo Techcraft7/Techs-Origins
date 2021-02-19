@@ -15,6 +15,7 @@
     "ConnectScreenMixin",
     "GetSkinTextureMixin",
     "MinecraftClientMixin",
+    "ParticleSummonerMixin",
     "PlayerEndCrystalBeamRendererMixin",
     "TextureManagerMixin"
   ],

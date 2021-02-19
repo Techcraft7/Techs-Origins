@@ -1,5 +1,3 @@
 {
-  "type": "origins:particle",
-  "particle": "minecraft:dust",
-  "frequency": 20
+  "type": "origins:simple"
 }

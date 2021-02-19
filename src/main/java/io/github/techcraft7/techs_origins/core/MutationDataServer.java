@@ -40,7 +40,7 @@ public class MutationDataServer {
 	}
 
 	@Nullable
-	public static PlayerMutationData getData(UUID uuid) {
+	public static PlayerMutationData getPlayerData(UUID uuid) {
 		return PLAYER_DATA.getOrDefault(uuid, null);
 	}
 
@@ -61,7 +61,7 @@ public class MutationDataServer {
 		int playTime = player.getStatHandler().getStat(Stats.CUSTOM.getOrCreateStat(Stats.PLAY_ONE_MINUTE));
 		MutationState state = MutationState.getStateFromAgeTicks(playTime);
 
-		PlayerMutationData data = getData(player.getUuid());
+		PlayerMutationData data = getPlayerData(player.getUuid());
 		PlayerMutationData newData = new PlayerMutationData(type, state, isSlim);
 		if (data == null) {
 			PLAYER_DATA.put(player.getUuid(), newData);
@@ -77,7 +77,7 @@ public class MutationDataServer {
 		Map<UUID, PlayerMutationData> map = Maps.newHashMap(PLAYER_DATA);
 		OVERRIDES.forEach((uuid, state) -> {
 			if (map.containsKey(uuid)) {
-				PlayerMutationData data = getData(uuid);
+				PlayerMutationData data = getPlayerData(uuid);
 				Objects.requireNonNull(data);
 				map.put(uuid, new PlayerMutationData(data.getA(), state, data.isSlim()));
 			}

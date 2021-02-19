@@ -18,6 +18,8 @@
 	"power.\${modid}.redstonian_stun.description": "Stun nearby players at the press of a button!",
 	"power.\${modid}.redstonian_zap.name": "Zap",
 	"power.\${modid}.redstonian_zap.description": "Zap nearby players at the press of a button!",
+	"power.\${modid}.redstone_aura.name": "Redstone Aura",
+	"power.\${modid}.redstone_aura.description": "Your body emits a weak redstone signal, not enough to activate components though.",
 
 	"power.\${modid}.mutation_dragon.name": "Mutation",
 	"power.\${modid}.mutation_dragon.description": "Your body slowly mutates into something else.",
