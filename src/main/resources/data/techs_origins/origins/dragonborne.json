@@ -1,9 +1,9 @@
 {
 	"powers": [
 		"\$modid:launch_dragon_fireball",
-		"\$modid:crystal_regen",
 		"\$modid:no_dragon_breath",
-		"\$modid:no_dragon_fireball_aoe_cloud"
+		"\$modid:no_dragon_fireball_aoe_cloud",
+		"origins:carnivore"
 	],
 	"icon": "dragon_egg",
 	"order": 99,

@@ -3,6 +3,6 @@
     "\$modid:mutation_redstonian"
   ],
   "icon": "redstone_block",
-  "order": 98,
+  "order": 998,
   "impact": 3
 }
