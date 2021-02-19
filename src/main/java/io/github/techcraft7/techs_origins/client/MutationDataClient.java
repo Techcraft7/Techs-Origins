@@ -1,5 +1,6 @@
 package io.github.techcraft7.techs_origins.client;
 
+import com.mojang.blaze3d.systems.RenderSystem;
 import io.github.techcraft7.techs_origins.TechsOrigins;
 import io.github.techcraft7.techs_origins.core.PlayerMutationData;
 import net.fabricmc.api.EnvType;
@@ -39,16 +40,21 @@ public class MutationDataClient {
 	}
 
 	private static void destroyTexture(MutationTexture value) {
-		TechsOrigins.LOGGER.debug("Destroying texture: " + value.getID());
-		MinecraftClient.getInstance().getTextureManager().destroyTexture(value.getID());
-		try {
-			textures.setAccessible(true);
-			//noinspection unchecked
-			((Map<Identifier, AbstractTexture>)textures.get(MinecraftClient.getInstance()
-				.getTextureManager())).remove(value.getID());
-		} catch (IllegalAccessException e) {
-			e.printStackTrace();
-		}
+		RenderSystem.recordRenderCall(() -> {
+			TechsOrigins.LOGGER.debug("Destroying texture: " + value.getID());
+			try {
+				MinecraftClient.getInstance().getTextureManager().destroyTexture(value.getID());
+			} catch (Throwable ignored) {
+				return;
+			}
+			try {
+				textures.setAccessible(true);
+				//noinspection unchecked
+				((Map<Identifier, AbstractTexture>)textures.get(MinecraftClient.getInstance().getTextureManager())).remove(value.getID());
+			} catch (IllegalAccessException e) {
+				e.printStackTrace();
+			}
+		});
 	}
 
 	public static PlayerMutationData getPlayerData(UUID uuid) {
@@ -73,6 +79,7 @@ public class MutationDataClient {
 	public static MutationTexture createAndCacheTexture(UUID uuid) {
 		if (isTextureCached(uuid)) {
 			if (!getCachedTexture(uuid).getPlayerData().equals(getPlayerData(uuid))) {
+				destroyTexture(getCachedTexture(uuid));
 				return TEXTURE_CACHE.put(uuid, new MutationTexture(uuid));
 			}
 			return getCachedTexture(uuid);

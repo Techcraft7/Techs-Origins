@@ -21,7 +21,7 @@ import java.util.concurrent.atomic.*;
 
 public class MutationDataServer {
 
-	private static final Map<UUID, MutationState> OVERRIDES = Maps.newHashMap();
+	private static final Map<UUID, MutationState> OVERRIDES = Maps.newHashMap(); // For debugging only
 	private static final Map<UUID, PlayerMutationData> PLAYER_DATA = Maps.newHashMap();
 	private static final Map<UUID, Boolean> SLIM_DATA = Maps.newHashMap();
 	private static final MinecraftSessionService SESSION_SERVICE;
@@ -86,9 +86,11 @@ public class MutationDataServer {
 		ServerPlayNetworking.send(player, NetworkInit.PLAYER_DATA_PID, buf);
 	}
 
+	// This is a debug method
 	public static void setState(ServerPlayerEntity player, MutationState state) {
 		Objects.requireNonNull(player);
 		Objects.requireNonNull(state);
 		OVERRIDES.put(player.getUuid(), state);
+		sendData(player);
 	}
 }

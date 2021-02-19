@@ -10,14 +10,13 @@
     "NoDragonBreathAOECloudMixin",
     "PlayerEndCrystalRegenMixin",
     "PlayerMutationTypeUpdater",
-    "TextureManagerMixin"
   ],
   "client": [
-    "BindTextureInnerMixin",
     "ConnectScreenMixin",
     "GetSkinTextureMixin",
     "MinecraftClientMixin",
-    "PlayerEndCrystalBeamRendererMixin"
+    "PlayerEndCrystalBeamRendererMixin",
+    "TextureManagerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

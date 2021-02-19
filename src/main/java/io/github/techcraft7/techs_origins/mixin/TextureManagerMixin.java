@@ -9,6 +9,7 @@ import net.minecraft.util.Identifier;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.io.IOException;
@@ -74,5 +75,27 @@ public abstract class TextureManagerMixin {
 			this.registerTexture(PlayerMutationData.createPartialID(uuid), tex);
 		}
 		return tex;
+	}
+
+	@Inject(at = @At("HEAD"), method = "bindTextureInner", cancellable = true)
+	public void bindTextureInner(Identifier id, CallbackInfo ci) {
+		TextureManager tm = (TextureManager)(Object)this;
+		UUID uuid = PlayerMutationData.getUUIDFromPartialMutation(id);
+		if (uuid == null) {
+			return;
+		}
+		AbstractTexture tex;
+
+		if (MutationDataClient.isTextureCached(uuid)) {
+			tex = MutationDataClient.getCachedTexture(uuid);
+		} else {
+			tex = MutationDataClient.createAndCacheTexture(uuid);
+		}
+
+		if (tex != null) {
+			tex.bindTexture();
+			ci.cancel();
+		}
+
 	}
 }
