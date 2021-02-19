@@ -79,7 +79,6 @@ public abstract class TextureManagerMixin {
 
 	@Inject(at = @At("HEAD"), method = "bindTextureInner", cancellable = true)
 	public void bindTextureInner(Identifier id, CallbackInfo ci) {
-		TextureManager tm = (TextureManager)(Object)this;
 		UUID uuid = PlayerMutationData.getUUIDFromPartialMutation(id);
 		if (uuid == null) {
 			return;

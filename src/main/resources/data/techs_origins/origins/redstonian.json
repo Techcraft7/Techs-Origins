@@ -1,5 +1,7 @@
 {
   "powers": [
+    "\$modid:redstonian_stun",
+    "\$modid:redstone_aura"
   ],
   "icon": "redstone_block",
   "order": 98,

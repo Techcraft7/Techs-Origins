@@ -1,0 +1,9 @@
+{
+  "type": "\$modid:redstonian_stun",
+  "cooldown": 600,
+  "stun_type": "lightning",
+  "hud_render": {
+    "sprite_location": "\$modid:textures/gui/bars.png",
+    "bar_index": 1
+  }
+}
