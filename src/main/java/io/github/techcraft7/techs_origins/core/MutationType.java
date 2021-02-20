@@ -12,7 +12,8 @@ import java.util.stream.*;
 
 @SuppressWarnings("unused")
 public enum MutationType {
-	DRAGONBORNE, ZOMBIE, REDSTONIAN;
+	DRAGONBORNE, ZOMBIE, REDSTONIAN, // Custom
+	ARACHNID, AVIAN, BLAZEBORN, ELYTRIAN, ENDERIAN, FELINE, MERLING, PHANTOM, SHULK; // Origins defaults
 
 	private static final BiMap<Integer, MutationType> INT_MAP = ImmutableBiMap.copyOf(Arrays.stream(values())
 		.collect(Collectors.toMap(Enum::ordinal, Function.identity())));
