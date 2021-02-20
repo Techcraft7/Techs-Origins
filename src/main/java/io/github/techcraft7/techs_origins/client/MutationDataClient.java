@@ -50,7 +50,8 @@ public class MutationDataClient {
 			try {
 				textures.setAccessible(true);
 				//noinspection unchecked
-				((Map<Identifier, AbstractTexture>)textures.get(MinecraftClient.getInstance().getTextureManager())).remove(value.getID());
+				((Map<Identifier, AbstractTexture>)textures.get(MinecraftClient.getInstance()
+					.getTextureManager())).remove(value.getID());
 			} catch (IllegalAccessException e) {
 				e.printStackTrace();
 			}

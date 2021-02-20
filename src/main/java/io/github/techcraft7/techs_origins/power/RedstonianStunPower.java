@@ -4,7 +4,8 @@ import io.github.apace100.origins.power.ActiveCooldownPower;
 import io.github.apace100.origins.power.PowerType;
 import io.github.apace100.origins.util.HudRender;
 import io.github.techcraft7.techs_origins.TechsOrigins;
-import io.github.techcraft7.techs_origins.core.*;
+import io.github.techcraft7.techs_origins.core.MutationState;
+import io.github.techcraft7.techs_origins.core.PlayerMutationData;
 import net.minecraft.entity.*;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -18,7 +19,8 @@ public class RedstonianStunPower extends ActiveCooldownPower {
 	private final StunType stunType;
 
 	public RedstonianStunPower(PowerType<?> type, PlayerEntity player, int cooldownDuration, HudRender hudRender, String stunType) {
-		super(type, player, cooldownDuration, hudRender, (entity) -> {});
+		super(type, player, cooldownDuration, hudRender, (entity) -> {
+		});
 		this.type = type;
 		Objects.requireNonNull(stunType, "RedstonianStunPower: stunType was null!");
 		switch (stunType.toLowerCase()) {

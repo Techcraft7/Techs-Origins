@@ -21,12 +21,12 @@ import java.util.concurrent.atomic.*;
 
 public class MutationDataServer {
 
+	// Atomic Reference to be thread safe :)
+	public static final AtomicBoolean NEEDS_SYNC = new AtomicBoolean(false);
 	private static final Map<UUID, MutationState> OVERRIDES = Maps.newHashMap(); // For debugging only
 	private static final Map<UUID, PlayerMutationData> PLAYER_DATA = Maps.newHashMap();
 	private static final Map<UUID, Boolean> SLIM_DATA = Maps.newHashMap();
 	private static final MinecraftSessionService SESSION_SERVICE;
-	// Atomic Reference to be thread safe :)
-	public static final AtomicBoolean NEEDS_SYNC = new AtomicBoolean(false);
 
 	static {
 		// Create session service
@@ -50,9 +50,8 @@ public class MutationDataServer {
 			return;
 		}
 		if (!SLIM_DATA.containsKey(player.getUuid())) {
-			MinecraftProfileTexture tex = SESSION_SERVICE.getTextures(player.getGameProfile(), true).getOrDefault(MinecraftProfileTexture.Type.SKIN,
-				null
-			);
+			MinecraftProfileTexture tex = SESSION_SERVICE.getTextures(player.getGameProfile(), true)
+				.getOrDefault(MinecraftProfileTexture.Type.SKIN, null);
 			SLIM_DATA.put(player.getUuid(),
 				tex == null ? (player.getUuid().hashCode() & 1) == 1 : Objects.equals(tex.getMetadata("model"), "slim")
 			);

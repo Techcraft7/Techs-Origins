@@ -28,10 +28,8 @@ public class PlayerEndCrystalBeamRendererMixin {
 			return;
 		}
 		// Get nearby end crystals in 32 block radius
-		List<EndCrystalEntity> entityList = player.getEntityWorld().getEntitiesByType(EntityType.END_CRYSTAL,
-			player.getBoundingBox().expand(32),
-			e -> true
-		);
+		List<EndCrystalEntity> entityList = player.getEntityWorld()
+			.getEntitiesByType(EntityType.END_CRYSTAL, player.getBoundingBox().expand(32), e -> true);
 		// Sort by distance
 		entityList.sort(Comparator.comparingDouble(e -> e.getPos().distanceTo(player.getPos())));
 		// Render beams for the 3 closest crystals

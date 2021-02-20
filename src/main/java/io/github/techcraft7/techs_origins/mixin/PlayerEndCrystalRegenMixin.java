@@ -25,10 +25,8 @@ public class PlayerEndCrystalRegenMixin {
 		if (player.world.isClient) {
 			return;
 		}
-		List<EndCrystalEntity> entityList = player.getEntityWorld().getEntitiesByType(EntityType.END_CRYSTAL,
-			player.getBoundingBox().expand(32),
-			e -> true
-		);
+		List<EndCrystalEntity> entityList = player.getEntityWorld()
+			.getEntitiesByType(EntityType.END_CRYSTAL, player.getBoundingBox().expand(32), e -> true);
 		entityList.sort(Comparator.comparingDouble(e -> e.getPos().distanceTo(player.getPos())));
 		entityList.stream().findFirst().ifPresent(crystal -> {
 			int numCrystals = entityList.size(); // Number of nearby end crystals

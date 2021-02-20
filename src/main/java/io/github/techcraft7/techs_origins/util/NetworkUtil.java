@@ -20,8 +20,7 @@ public class NetworkUtil {
 			MutationState state = MutationState.fromInt(buf.readInt());
 			boolean isSlim = buf.readBoolean();
 			Objects.requireNonNull(type, "readPlayerDataFromPacketBuffer: failed to read the MutationType for " + uuid);
-			Objects.requireNonNull(
-				state,
+			Objects.requireNonNull(state,
 				"readPlayerDataFromPacketBuffer: failed to read the MutationState for " + uuid
 			);
 			data.put(uuid, new PlayerMutationData(type, state, isSlim));

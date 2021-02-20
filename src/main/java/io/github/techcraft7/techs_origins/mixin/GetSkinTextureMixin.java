@@ -15,9 +15,7 @@ public class GetSkinTextureMixin {
 
 	@Inject(at = @At("HEAD"), method = "getTexture", cancellable = true)
 	public void getTexture(AbstractClientPlayerEntity player, CallbackInfoReturnable<Identifier> cir) {
-		PlayerEntityRenderer renderer = (PlayerEntityRenderer)(Object)this;
 		PlayerMutationData mutationData = MutationDataClient.getPlayerData(player);
-		boolean slim = player.getModel().equalsIgnoreCase("slim");
 		if (mutationData != null) {
 			Identifier texture = mutationData.getTexture(player);
 			if (texture != null) {

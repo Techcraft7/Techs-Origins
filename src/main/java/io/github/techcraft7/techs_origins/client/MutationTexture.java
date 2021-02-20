@@ -88,9 +88,9 @@ public class MutationTexture extends ResourceTexture {
 			return;
 		}
 		// Otherwise load the skin
-		Identifier id = MinecraftClient.getInstance().getSkinProvider().loadSkin(mpt,
-			MinecraftProfileTexture.Type.SKIN
-		);
+		Identifier id = MinecraftClient.getInstance()
+			.getSkinProvider()
+			.loadSkin(mpt, MinecraftProfileTexture.Type.SKIN);
 		// Create mutated texture
 		image = maskTexture(loadPlayerSkinTexture(id), playerData);
 		// Throw error, this should not happen but just in case :)

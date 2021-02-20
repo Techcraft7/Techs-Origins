@@ -15,7 +15,8 @@ import java.util.function.*;
 @Mixin(MinecraftServer.class)
 public class MinecraftServerMixin {
 
-	@Shadow private PlayerManager playerManager;
+	@Shadow
+	private PlayerManager playerManager;
 
 	@Inject(at = @At("HEAD"), method = "startServer")
 	private static void startServer(Function<Thread, MinecraftServer> serverFactory, CallbackInfoReturnable<MinecraftServer> cir) {
