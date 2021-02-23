@@ -25,6 +25,8 @@ public class TOPowers {
 		"no_dragon_fireball_aoe_cloud"));
 	public static final PowerTypeReference<?> REDSTONE_AURA = new PowerTypeReference<>(TechsOrigins.identifier(
 		"redstone_aura"));
+	public static final PowerTypeReference<?> NO_LEAVE_NETHER = new PowerTypeReference<>(TechsOrigins.identifier(
+		"no_leave_nether"));
 	private static final Map<MutationType, PowerTypeReference<?>> MUTATION_MAP = Maps.newHashMap();
 	private static final Map<PowerFactory<?>, Identifier> POWER_FACTORIES = new LinkedHashMap<>();
 

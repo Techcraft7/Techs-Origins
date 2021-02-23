@@ -1,0 +1,15 @@
+{
+  "powers": [
+    "\$modid:mutation_blazeborn",
+    "origins:fire_immunity",
+    "\$modid:no_leave_nether",
+    "\$modid:burning_wrath_plus",
+    "origins:hotblooded",
+    "\$modid:water_vulnerability_plus",
+    "origins:flame_particles",
+    "\$modid:damage_from_snowballs_plus"
+  ],
+  "icon": "minecraft:blaze_powder",
+  "order": 995,
+  "impact": 3
+}

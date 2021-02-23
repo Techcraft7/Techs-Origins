@@ -9,7 +9,8 @@
     "MinecraftServerMixin",
     "NoDragonBreathAOECloudMixin",
     "PlayerEndCrystalRegenMixin",
-    "PlayerMutationTypeUpdater"
+    "PlayerMutationTypeUpdater",
+    "PreventLeavingNetherMixin"
   ],
   "client": [
     "ConnectScreenMixin",

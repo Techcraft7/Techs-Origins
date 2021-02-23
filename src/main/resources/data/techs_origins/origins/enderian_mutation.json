@@ -1,0 +1,14 @@
+{
+  "powers": [
+    "\$modid:mutation_enderian",
+    "\$modid:throw_ender_pearl_plus",
+    "\$modid:water_vulnerability_plus",
+    "origins:pumpkin_hate",
+    "\$modid:extra_reach_plus",
+    "\$modid:silk_hands",
+    "origins:ender_particles"
+  ],
+  "icon": "minecraft:ender_pearl",
+  "order": 992,
+  "impact": 3
+}

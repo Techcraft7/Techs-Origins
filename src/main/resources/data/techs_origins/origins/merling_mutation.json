@@ -1,0 +1,16 @@
+{
+  "powers": [
+    "\$modid:mutation_merling",
+    "origins:water_breathing",
+    "origins:water_vision",
+    "origins:aqua_affinity",
+    "\$modid:swim_speed_plus",
+    "origins:like_water",
+    "origins:aquatic",
+    "origins:conduit_power_on_land",
+    "\$modid:dry_out"
+  ],
+  "icon": "minecraft:cod",
+  "order": 990,
+  "impact": 3
+}

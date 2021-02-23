@@ -3,7 +3,8 @@
 		"\$modid:launch_dragon_fireball",
 		"\$modid:no_dragon_breath",
 		"\$modid:no_dragon_fireball_aoe_cloud",
-		"origins:carnivore"
+		"origins:carnivore",
+		"origins:natural_armor"
 	],
 	"icon": "dragon_egg",
 	"order": 99,

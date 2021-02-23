@@ -1,0 +1,10 @@
+{
+  "type": "origins:launch",
+  "cooldown": 300,
+  "hud_render": {
+    "bar_index": 4
+  },
+  "sound": "minecraft:entity.parrot.fly",
+  "speed": 3,
+  "key": "primary"
+}

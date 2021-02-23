@@ -1,0 +1,11 @@
+{
+  "type": "origins:modify_jump",
+  "modifier": {
+    "name": "Bonus jump force while sprinting",
+    "value": 1,
+    "operation": "multiply_base"
+  },
+  "condition": {
+    "type": "origins:sprinting"
+  }
+}

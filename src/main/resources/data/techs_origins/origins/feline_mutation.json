@@ -1,0 +1,14 @@
+{
+  "powers": [
+    "\$modid:mutation_feline",
+    "origins:fall_immunity",
+    "\$modid:sprint_jump_plus",
+    "origins:fragile",
+    "\$modid:weak_arms_plus",
+    "origins:scare_creepers",
+    "\$modid:cat_vision_plus"
+  ],
+  "icon": "minecraft:orange_wool",
+  "order": 991,
+  "impact": 3
+}

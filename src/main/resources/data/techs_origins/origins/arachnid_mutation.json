@@ -1,0 +1,15 @@
+{
+  "powers": [
+    "\$modid:mutation_arachnid",
+    "origins:climbing",
+    "origins:webbing",
+    "origins:no_cobweb_slowdown",
+    "origins:carnivore",
+    "\$modid:fragile_plus",
+    "origins:arthropod",
+    "\$modid:spider_eyes"
+  ],
+  "icon": "minecraft:cobweb",
+  "order": 996,
+  "impact": 3
+}

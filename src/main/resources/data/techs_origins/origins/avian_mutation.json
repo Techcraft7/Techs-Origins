@@ -1,0 +1,13 @@
+{
+  "powers": [
+    "\$modid:mutation_avian",
+    "origins:slow_falling",
+    "origins:fresh_air",
+    "\$modid:tailwind_plus",
+    "origins:vegetarian",
+    "origins:fragile"
+  ],
+  "icon": "minecraft:feather",
+  "order": 994,
+  "impact": 3
+}

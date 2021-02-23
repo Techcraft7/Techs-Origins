@@ -1,0 +1,14 @@
+{
+  "powers": [
+    "\$modid:mutation_shulk",
+    "origins:shulker_inventory",
+    "\$modid:natural_armor_plus",
+    "\$modid:strong_arms_plus",
+    "origins:strong_arms_break_speed",
+    "origins:no_shield",
+    "\$modid:more_exhaustion_plus"
+  ],
+  "icon": "minecraft:shulker_shell",
+  "order": 988,
+  "impact": 3
+}

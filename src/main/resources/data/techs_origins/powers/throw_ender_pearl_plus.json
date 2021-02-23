@@ -1,0 +1,12 @@
+{
+  "type": "origins:fire_projectile",
+  "cooldown": 15,
+  "hud_render": {
+    "bar_index": 6
+  },
+  "entity_type": "origins:enderian_pearl",
+  "sound": "minecraft:entity.ender_pearl.throw",
+  "speed": 2,
+  "divergence": 0,
+  "key": "primary"
+}

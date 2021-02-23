@@ -6,6 +6,15 @@
 		"\$modid:zombie",
 		"\$modid:zombie_mutation",
 		"\$modid:redstonian",
-		"\$modid:redstonian_mutation"
+		"\$modid:redstonian_mutation",
+		"\$modid:arachnid_mutaiton",
+		"\$modid:avian_mutation",
+		"\$modid:blazeborn_mutation",
+		"\$modid:elytrian_mutation",
+		"\$modid:enderian_mutation",
+		"\$modid:feline_mutation",
+		"\$modid:merling_mutation",
+		"\$modid:phantom_mutation",
+		"\$modid:shulk_mutation"
 	]
 }

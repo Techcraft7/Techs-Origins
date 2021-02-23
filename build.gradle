@@ -64,6 +64,7 @@ processResources {
 				println "Processing file: " + it.getPath()
 				expand "version": project.version
 				expand "modid": "techs_origins"
+				expand "origins_version": "${project.origins_version}"
 			}
 		} else {
 			println "Skipping binary file: " + path

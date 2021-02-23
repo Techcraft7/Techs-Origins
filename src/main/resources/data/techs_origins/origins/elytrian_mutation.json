@@ -1,0 +1,14 @@
+{
+  "powers": [
+    "\$modid:mutation_elytrian",
+    "origins:elytra",
+    "\$modid:launch_into_air_plus",
+    "\$modid:aerial_combatant_plus",
+    "origins:light_armor",
+    "\$modid:claustrophobia_plus",
+    "\$modid:more_kinetic_damage_plus"
+  ],
+  "icon": "minecraft:elytra",
+  "order": 993,
+  "impact": 3
+}

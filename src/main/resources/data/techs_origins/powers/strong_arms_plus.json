@@ -1,0 +1,25 @@
+{
+  "type": "origins:modify_harvest",
+  "allow": true,
+  "block_condition": {
+    "type": "origins:or",
+    "conditions": [
+      {
+        "type": "origins:in_tag",
+        "tag": "origins:natural_stone"
+      },
+      {
+        "type": "origins:in_tag",
+        "tag": "walls"
+      },
+      {
+        "type": "origins:in_tag",
+        "tag": "stone_bricks"
+      },
+      {
+        "type": "origins:in_tag",
+        "tag": "stone_pressure_plates"
+      }
+    ]
+  }
+}

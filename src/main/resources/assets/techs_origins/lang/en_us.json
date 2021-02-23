@@ -1,7 +1,7 @@
 {
 	"origin.\${modid}.dragonborne.name": "Dragonborne",
 	"origin.\${modid}.dragonborne.description": "You are a child of the Ender Dragon, like an Enderian, but more dragon than Enderman.",
-	"origin.\${modid}.dragonborne_mutation.name": "Dragonborne (Mutation)",
+	"origin.\${modid}.dragonborne_mutation.name": "[M] Dragonborne",
 	"origin.\${modid}.dragonborne_mutation.description": "You are a child of the Ender Dragon, like an Enderian, but more dragon than Enderman.",
 
 	"power.\${modid}.crystal_regen.name": "Crystal Regen",
@@ -20,11 +20,16 @@
 	"power.\${modid}.redstonian_zap.description": "Zap nearby players at the press of a button!",
 	"power.\${modid}.redstone_aura.name": "Redstone Aura",
 	"power.\${modid}.redstone_aura.description": "Your body emits a weak redstone signal, not enough to activate components though.",
+	"power.\${modid}.aerial_combatant_plus.name": "Aerial Combatant+",
+	"power.\${modid}.aerial_combatant_plus.description": "You deal extra damage while flying",
+	"power.\${modid}.burn_in_daylight_plus.name": "Burn In Daylight+",
+	"power.\${modid}.burn_in_daylight_plus.description": "TODO",
 
 	"power.\${modid}.mutation_dragon.name": "Mutation",
 	"power.\${modid}.mutation_dragon.description": "Your body slowly mutates into something else.",
 	"power.\${modid}.mutation_zombie.name": "Mutation",
 	"power.\${modid}.mutation_zombie.description": "Your body slowly mutates into something else.",
 	"power.\${modid}.mutation_redstonian.name": "Mutation",
-	"power.\${modid}.mutation_redstonian.description": "Your body slowly mutates into something else."
+	"power.\${modid}.mutation_redstonian.description": "Your body slowly mutates into something else.",
+
 }

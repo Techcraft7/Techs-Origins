@@ -1,0 +1,15 @@
+{
+  "powers": [
+    "\$modid:mutation_phantom",
+    "origins:phantomize",
+    "origins:translucent",
+    "origins:phasing",
+    "origins:invisibility",
+    "\$modid:burn_in_daylight_plus",
+    "\$modid:hunger_over_time_plus",
+    "\$modid:fragile_plus"
+  ],
+  "icon": "minecraft:phantom_membrane",
+  "order": 989,
+  "impact": 3
+}
